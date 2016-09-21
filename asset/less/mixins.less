@@ -1,0 +1,152 @@
+//蓝色背景
+.backgroundBlue{
+    background-color: @prettyBlue;
+}
+//灰色背景
+.backgroundGray{
+    background-color: @grayColor;
+}
+//深灰色背景
+.backgroundDarkGray{
+    background-color: @darkGrayColor;
+}
+//更灰的背景，主要用于某些组件的背景
+.backgroundMoreGray{
+	background-color: @grayColorOfBorder;
+}
+//白色背景
+.backgroundWhite{
+	background-color: white;
+}
+//橘黄色背景
+.backgroundYellow{
+	background-color: @prettyYellow;
+}
+//橘黄色背景
+.backgroundRed{
+  background-color: @prettyRed;
+}
+
+//字体
+.font(@size,@color,@style:normal){
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	font-size: @size;
+	color: @color;
+	font-weight: @style;
+}
+//字体
+.basicFont{
+	.font(@normlFontSize,@normalColorOfFont);
+}
+.basicInverseFont{
+	.font(@normlFontSize,white);
+}
+.basicBoldFont{
+	.font(@normlFontSize,@normalColorOfFont,bold);
+}
+.basicTipFont{
+	.font(@normlFontSize,@tipColorOfFont);
+}
+//边框
+.border{
+    border:@grayColorOfBorder solid 1px;
+}
+//蓝色边框
+.blueborder{
+	border: @prettyBlue solid 1px !important;
+}
+//鼠标移动上去出现手指
+.hand{
+	cursor: pointer;
+}
+//不换行 多余字体省略号代替
+.ellipse{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+//加粗字体
+.hxBold{
+    font-weight: bold;
+}
+//蓝色字体
+.hxBlue{
+	color: @prettyBlue ;
+}
+//注释性字体
+.hxTip{
+    color: @tipColorOfFont;
+}
+//白色字体
+.hxWhite{
+	color: @whiteColorOfFont;
+}
+//正常字体
+.hxNormal{
+	color: @normalColorOfFont;
+}
+//一级标题
+.hxLg{
+	font-size: @lg-text;
+}
+//二级标题
+.hxMd{
+	font-size: @md-text;
+}
+//小
+.hxSm{
+	font-size: @sm-text;
+}
+//超小
+.hxEx{
+	font-size: @xs-text;
+}
+
+//圆角
+.round{
+	border-radius: @borderRadius;
+}
+//白色背景带边框
+.hxPlate{
+	.backgroundWhite;
+	.border;
+	.round;
+}
+//有阴影的边框
+.hxShadow{
+	box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+//渐变的函数和时间
+.transition{
+	transition-timing-function: ease-in;
+	-webkit-transition-timing-function: ease-in;
+	transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+}
+//渐变属性
+.transitionProperty(...){
+	transition-property: @arguments;
+	-webkit-transition-property: @arguments;
+}
+//变换
+.transform(...){
+	-webkit-transform:@arguments;
+	transform: @arguments; 
+}
+//新增加好类:如下
+//<div class="addIcon" style="width:200px;height:110px" ng-click="showPop()">
+//		<img src="./asset/image/new_contact.png" alt=""/>
+//</div>
+.addIcon{
+  position:relative;
+  border:1px dashed #ddd;
+  border-radius: 2px;
+  .hand;
+  img{
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left:-10px ;
+	margin-top:-10px ;
+  }
+}

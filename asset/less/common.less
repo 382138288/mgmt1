@@ -1,0 +1,65 @@
+h1, h2, h3, h4, h5, h6, hr, p,dl, dt, dd, ul, ol, li, th, td, div, span, img,
+fieldset, button, input, select, textarea{
+  margin: 0;padding: 0;
+}
+/* color & background */
+html{color:#000; background:#FFF;}
+/* font */
+body, button, input, select, textarea { /* for ie */
+  font: 12px/18px Microsoft YaHei,Arial, Verdana;
+}
+body {
+  margin: 0;
+  background: #fff;
+  font-family: "Microsoft YaHei",Helvetica,Arial,FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+  color: #585858;
+  font-size: 1.2rem;
+  clear: both;
+}
+ul {
+  margin-top: 0;
+}
+/* fix center */
+html,body {
+  //margin-bottom: 50px;
+  //height: 100%;
+  //margin: 0 auto;}
+/* h1~h6 */
+h1 {font-size: 18px;}
+h2 {font-size: 16px;}
+h3 {font-size: 14px;}
+h4, h5, h6 {font-size: 100%;}
+/* a */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+/* list */
+ul,ol {list-style: none;}
+/* img border */
+fieldset,img{border: 0}
+
+/* table */
+table {border-collapse: collapse;border-spacing: 0;font:inherit;}
+/* margin */
+.alpha {margin-left: 0;}
+.omega {margin-right: 0;}
+
+/* float & clear */
+.left{float:left;}
+.right{float:right;}
+.clear {clear: both;display: block;}
+
+/* clearfix */
+.clearfix:after{content:".";display:block;}
+.clearfix{display:inline-table;}
+/* Hides from IE-mac */
+//* html .clearfix{height:1%;}
+.clearfix{display:block;}
+.gray{
+ color:@tipColorOfFont;
+}
+.black{
+  color:@normalColorOfFont;
+}
+i{
+  font-style: normal;}
+}

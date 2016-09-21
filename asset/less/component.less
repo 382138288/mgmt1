@@ -1,0 +1,456 @@
+@hxPanelWidth: 60px;
+@hxProductToolsHeight: 30px;
+.smlAvater {
+  width: @smlAvaterSize;
+  height: @smlAvaterSize;
+  border-radius: @smlAvaterSize/2;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hxSmlCard {
+  width: @hxSmlCardWidth;
+  height: @hxSmlCardHeight;
+  .border;
+  .hand;
+  .floatside {
+    position: absolute;
+    width: @hxSmlCardHeight/3;
+    height: @hxSmlCardHeight;
+    top: -1px;
+    right: -@hxSmlCardHeight/3-1;
+    display: none;
+    .floatsideitem {
+      height: @hxSmlCardHeight/3;
+      .hand;
+    }
+    .delete {
+      background: url(../image/contact_delete.png) no-repeat center center;
+      .backgroundDarkGray;
+    }
+    .main {
+      background: url(../image/contact_main.png) no-repeat center center;
+      .backgroundDarkGray;
+    }
+    .edit {
+      background: url(../image/contact_edit.png) no-repeat center center;
+      .backgroundDarkGray;
+    }
+  }
+  &:hover {
+    .floatside {
+      display: block;
+    }
+  }
+}
+
+//添加新联系人
+.hxNewContact {
+  .hxSmlCard;
+  background: url('../image/new_contact.png') no-repeat center center;
+  cursor: pointer;
+  border-style: dashed;
+  &:hover, &:active {
+    background-image: url('../image/new_contact_pressed.png');
+    border-color: @prettyBlue;
+  }
+}
+
+//通用表单样式
+.hxForm {
+  padding: @bigPadding;
+  line-height: @normalLineHeight;
+  .hxItem {
+    .name {
+      width: 20%;
+      padding: 0px @normalPadding;
+      text-align: right;
+      float: left;
+      box-sizing: border-box;
+      line-height: 35px;
+    }
+    .hxSeparator {
+      height: 35px;
+      float: left;
+      width: 20px;
+      margin-left: @smlMargin;
+      margin-right: @smlMargin;
+
+      .hxLine {
+        height: 1px;
+        background: @normalColorOfFont;
+        width: 15px;
+        margin: auto;
+        margin-top: 17px;
+      }
+    }
+    .input {
+      width: 60%;
+      padding: 0px @normalPadding;
+      float: left;
+      box-sizing: border-box;
+      .textControl {
+        width: 100%;
+        height: 35px;
+        line-height: 30px;
+        box-sizing: border-box;
+      }
+      .otherControl {
+        height: 35px;
+        line-height: 35px;
+        box-sizing: border-box;
+      }
+      .fuzzyResult {
+        position: absolute;
+        top: 35px;
+        left: 10px;
+        right: 10px;
+        line-height: 35px;
+        max-height: 320px;
+        overflow: auto;
+        .border;
+        .backgroundWhite;
+        .fuzzyItem {
+          .hand;
+          padding: 0px @normalPadding;
+          &:hover {
+            .backgroundGray;
+          }
+          &:active {
+            .backgroundDarkGray;
+          }
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .hxIcon {
+        width: 15px;
+        height: 15px;
+        margin: auto;
+        margin-top: 10px;
+        .hand;
+      }
+    }
+    &:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+    margin: @normalMargin 0px;
+  }
+
+}
+
+//自定义空间输入框控件样式
+.hxInput {
+  .border;
+  padding-left: @normalPadding;
+  resize: none;
+  &:focus {
+    outline: none;
+    .blueborder;
+  }
+}
+
+//自定义按钮样式
+.hxButton {
+  .round;
+  border-width: 0px;
+  height: @normalButtonHeight;
+  min-width: @normalButtonWidth;
+  text-align: center;
+  line-height: @normalButtonHeight - 4;
+  &:focus {
+    outline: none;
+  }
+}
+
+//自定义select样式
+.hxSelect {
+  background-color: #eee;
+  height: 29px;
+  &:focus {
+    outline: none;
+
+  }
+}
+
+//通用表格样式
+.hxTable {
+  .hxTHead {
+    height: @hxTableHeadHeight;
+    border-bottom: @grayColorOfBorder 1px solid;
+    .hxTHeadItem {
+      height: 100%;
+      float: left;
+      position: relative;
+      .hand;
+      .hxTitle {
+        height: @hxTableHeadContentHeight;
+        margin-top: (@hxTableHeadHeight - @hxTableHeadContentHeight)/2;
+        line-height: @hxTableHeadContentHeight;
+        border-right: @grayColorOfBorder 1px solid;
+        text-align: center;
+        .ellipse;
+        img {
+          margin-left: @normalMargin;
+        }
+        &:last-of-type {
+          border-right: 0px;
+        }
+      }
+      .hxTitleInput {
+        height: @hxTableHeadContentHeight+10;
+        width: 100%;
+        margin-top: (@hxTableHeadHeight - @hxTableHeadContentHeight - 10)/2;
+        position: relative;
+        input {
+          width: 100%;
+          height: 100%;
+          border: 0px;
+          padding-left: @normalPadding;
+          padding-right: @bigPadding+@normalPadding;
+          .round;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    &:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+  .hxTRow {
+    height: @hxTableCellHeight;
+    .hxCell {
+      line-height: @hxTableCellHeight;
+      float: left;
+      text-align: center;
+      .ellipse;
+      height: 100%;
+      border-bottom: @grayColorOfBorder 1px solid;
+      overflow: hidden;
+    }
+    &:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+}
+
+//通用弹出框样式
+.hxAlert {
+  width: @hxAlertWidth;
+  border-radius: @borderRadius;
+  .hxShadow;
+  .backgroundWhite;
+  .hxAlertFrameContent {
+    padding: @normalPadding;
+    .hxAlertIcon {
+      height: 80px;
+      display: table;
+      .hxAlertIconContainer {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      width: 30%;
+      float: left;
+      text-align: center;
+    }
+    .hxAlertMsg {
+      width: 70%;
+      float: left;
+      font-size: @lg-text;
+      font-weight: bold;
+      line-height: 36px;
+      min-height: 80px;
+      padding: @bigPadding @normalPadding 0px 0px;
+      .hxAlertContent {
+      }
+    }
+    &:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+  .hxAlertOper {
+    text-align: center;
+    padding: @normalPadding;
+    button {
+      margin-right: @normalMargin;
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+  }
+
+}
+
+//菜单列表
+.hxMenuList {
+  padding: @normalPadding;
+  .hxMenu {
+    margin-right: @bigMargin;
+    padding: @smlPadding;
+    .backgroundMoreGray;
+    .round;
+    float: left;
+    .hxWhite;
+    .hand;
+  }
+  .hxMenuActive {
+    .backgroundBlue;
+  }
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+//btn
+.wyBtnCacel {
+  font-size: 14px;
+  width: 50px;
+  display: inline-block;
+  //margin-left:@md-text;
+  color: #3BC0C3;
+  line-height: 35px;
+  width: 70px;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.wyBtnOk {
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+  color: #fff;
+  background-color: #F99B00;
+  border-radius: 3px;
+  line-height: 30px;
+  width: 70px;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+}
+
+// 通用的带头像和主页按钮的块的样式
+.hxHomeAndAvater {
+  height: @homeTopbarContentHeight;
+  float: right;
+  .hxHomeAndAvaterItem {
+    height: 100%;
+    box-sizing: content-box;
+    padding: 0px @smlPadding;
+    float: left;
+    .hxHomeAndAvaterIcon {
+      border-radius: @smlAvaterSize/2;
+      width: @smlAvaterSize;
+      height: @smlAvaterSize;
+      margin-top: (@homeTopbarContentHeight - @smlAvaterSize)/2;
+      box-sizing: border-box;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .houseIcon {
+      background: #3BC0C3 url('../image/homeicon.png') center center no-repeat;
+    }
+
+  }
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+//不在tab页里的顶端（含头像和home图标的）
+.hxHomebarWithoutTab {
+  height: @homeTopbarContentHeight;
+  .border;
+  border-width: 0px 0px 1px 0px;
+  margin-bottom: @normalMargin;
+  .hxHomebarWithoutTabTitle {
+    height: 100%;
+    float: left;
+    .indicator {
+      width: 4px;
+      height: 100%;
+      box-sizing: border-box;
+      padding: @bigPadding 0px;
+      float: left;
+      .line {
+        width: 100%;
+        height: 100%;
+        .backgroundBlue;
+      }
+    }
+    .des {
+      line-height: @homeTopbarContentHeight;
+      margin-left: @normalMargin;
+      float: left;
+      .hxLg;
+    }
+  }
+}
+
+//通用的可选中的导航按钮
+.hxPanel {
+  width: @hxPanelWidth;
+  height: 30px;
+  box-sizing: border-box;
+  margin-right: @bigMargin;
+  float: left;
+  line-height: @hxProductToolsHeight;
+  text-align: center;
+  .hxWhite;
+  .hand;
+  .backgroundMoreGray;
+  &:nth-of-type(2) {
+    margin-right: 0px;
+  }
+}
+
+.hxPanel.hxPanelActive {
+  .backgroundBlue;
+}
+
+.cname {
+  width: 35%;
+  padding: 0px @normalPadding;
+  text-align: right;
+  float: left;
+  box-sizing: border-box;
+}
+
+.cinput {
+  margin-left: @normalMargin;
+  width: 50%;
+  float: left;
+}
+
+.ctitle {
+  padding-left: @bigPadding;
+  border-left: 3px solid @prettyBlue;
+  margin: @bigMargin 0px 0px @bigMargin;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CIIC</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./asset/less/style.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- angularjs核心文件 -->
+    <script src="./node_modules/angular/angular.js"></script>
+    <!--velocity动画库引入-->
+    <script src="./node_modules/velocity-animate/velocity.min.js"></script>
+    <!-- 支持angular ui router 路由 -->
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- 支持angularjs 动画效果 -->
+    <script src="./node_modules/angular-animate/angular-animate.min.js"></script>
+    <!-- i18n和l10n支持 -->
+    <script src="./node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <!-- angular sanitize支持 -->
+    <script src="./node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <!-- angular translate 静态文件加载模块 -->
+    <script src="./node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!--引入underscore工具类-->
+    <script src="./node_modules/underscore/underscore-min.js"></script>
+    <!--项目js文件-->
+    <script src="./index.js"></script>
+    <script src="./filter/filter.js"></script>
+    <script src="./module/util/util.js"></script>
+    <script src="./service/cloneService.js"></script>
+    <script src="./service/netRequestService.js"></script>
+    <script src="./component/commonView/commun/commun.js"></script>
+    <script src="./component/commonView/scrollIndicator/scrollIndicator.js"></script>
+    <script src="./component/commonView/anchorPoint/anchorPoint.js"></script>
+    <script src="./component/plugin/alert.js"></script>
+    <script src="./component/commonView/listFilter/listFilter.js"></script>
+    <script src="./component/commonView/listFilter/listFilterMenu.js"></script>
+    <script src="./component/commonView/listFilter/listFilterDate.js"></script>
+    <script src="./component/commonView/hxCalendar/hxCalendarDouble.js"></script>
+    <script src="./component/commonView/filterMenu/filterMenu.js"></script>
+    <script src="./component/commonView/textarea/textarea.js"></script>
+    <script src="./component/commonView/logo/logo.js"></script>
+    <script src="./component/commonView/imgUploader/imgUploader.js"></script>
+    <script src="./component/commonView/imgPreview/imgPreviewer.js"></script>
+    <script src="./component/commonView/ciicTable/columnDef.js"></script>
+    <script src="./component/commonView/ciicTable/tableHeader.js"></script>
+    <script src="./component/commonView/homebar/homebar.js"></script>
+    <script src="./component/commonView/hxDateInput/dateInput.js"></script>
+    <script src="./component/commonView/hxCalendar/hxCalendar.js"></script>
+    <script src="./component/commonView/hxCalendar/hxCalendarSingle.js"></script>
+    <script src="./component/commonView/singleedit/singleedit.js"></script>
+    <script src="./component/commonView/popup/popup.js"></script>
+    <script src="./component/commonView/accordion/accordion.js"></script>
+    <script src="./component/commonView/accordioning/accordioning.js"></script>
+    <script src="./component/commonView/checkBoxAdd/checkBoxAdd.js"></script>
+    <!--头像和Home按钮通用组件-->
+    <script src="./component/commonView/homeAndAvater/homeAndAvater.js"></script>
+    <script src="./view/home/main.js"></script>
+    <script src="./view/home/entry.js"></script>
+    <script src="./view/home/drop_menu.js"></script>
+    <script src="./view/home/side.js"></script>
+    <script src="./view/authorization/authorization.js"></script>
+    <!--  ↓ 权限管理 ↓ -->
+    <script src="./component/commonView/uiTree/uiTree.js"></script>
+    <script src="./component/commonView/uiDialog/uiDialog.js"></script>
+    <script src="./component/commonView/selectTag/selectTag.js"></script>
+    <script src="./component/commonView/ronCarousel/ronCarousel.js"></script>
+    <script src="./component/commonView/leftSidebar/leftSidebar.js"></script>
+    <script src="./component/commonView/cardTable/cardTable.js"></script>
+    <script src="./component/commonView/deletableTag/deletableTag.js"></script>
+    <script src="./component/commonView/selectRolesPopup/selectRolesPopup.js"></script>
+    <script src="./component/commonView/selectPostsPopup/selectPostsPopup.js"></script>
+    <script src="./component/commonView/selectDepartPopup/selectDepartPopup.js"></script>
+    <script src="./component/commonView/permissionListPopup/permissionListPopup.js"></script>
+    <script src="./component/commonView/permissionSetPopup/permissionSetPopup.js"></script>
+    <script src="./service/authorizationService.js"></script>
+    <script src="./view/authorization/userMgmt/userMgmt.js"></script>
+    <script src="./view/authorization/roleMgmt/roleMgmt.js"></script>
+    <script src="./view/authorization/organizationMgmt/organizationMgmt.js"></script>
+    <script src="./view/authorization/resourceMgmt/resourceMgmt.js"></script>
+    <script src="./view/authorization/userMgmt/add.js"></script>
+    <script src="./view/authorization/userMgmt/detail.js"></script>
+    <script src="./view/authorization/userMgmt/edit.js"></script>
+    <script src="./view/authorization/resourceSecurityMgmt/resourceSecurityMgmt.js"></script>
+    <!-- ↑ 权限管理 ↑ -->
+    <!-- ↓猫头鹰通知↓ -->
+    <script src="./component/commonView/inform/inform.js"></script>
+    <script src="./component/commonView/inform/sockjs-0.3.min.js"></script>
+    <!-- ↑ 猫头鹰通知↑ -->
+</head>
+
+<body>
+    <div id="mainframe" ui-view="mainframe">
+    </div>
+</body>
+
+</html>
